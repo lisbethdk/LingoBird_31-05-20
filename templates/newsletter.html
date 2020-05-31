@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+            <div class="col-md-4 col-sm-4" id="newsletter-flash">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+
+                       <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <span>{{ message }}</span>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                       </div>
+
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+            </div>
+    </div>
+</div>
+
+
+ <main>
+  <section class="newsletter-container">
+      <div class="col-lg-6 col-md-12 col-sm-5" id="newsletterbox">
+       <div class="newsletterbox">
+    	  <img src="static/img/icons/logo-img-white.svg" alt="logo" class="avatar"/>
+	      <form method="post">
+	    	   <!-- Newsletter Email -->
+               <p>Never miss out on our latest news:</p>
+              <p class="newsletter-regular">Sign up to our newsletter to receive all the information about current events, new language classes and daily inspiration.</p>
+              <br>
+                <input type="text" name="newsletter_email" placeholder="EMAIL ADDRESS"/>
+		        <button type="submit">Sign Up</button>
+	      </form>
+       </div>
+      </div>
+  </section>
+ </main>
+
+{% endblock content %}
