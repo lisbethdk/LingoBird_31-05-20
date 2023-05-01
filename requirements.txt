@@ -1,5 +1,5 @@
 sqlalchemy
-Flask==2.0.3
+Flask==2.3.2
 gunicorn==19.9.0
 psycopg2
 smartninja-redis
